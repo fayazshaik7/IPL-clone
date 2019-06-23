@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bulma.css' %}">
+    <link rel="stylesheet" href="/templates/ms.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <style>
+        .mat{
+            text-align : center;
+            font-size : 18px;
+            color : Blue;
+            font-weight: bold;
+        }
+        
+        .mom{
+            text-align : center;
+            font-size : 30px;
+            color : yellow;
+        }
+        .tb{
+           float : left;
+           margin-left : 100px;
+        }
+    </style>
+    <style>
+        .scorecard{
+                position: absolute;
+                top:0px;
+                background-color: #0a0359;
+                height: 400px;
+                width: 100%;
+            }
+
+        .bgi1{
+            text-align: left;
+            position: absolute;
+            top:0px;
+            height: 300px;
+            width : 50%;
+            float: left;
+        }
+        .bgi2{
+            position: absolute;
+            top : 100px;
+            left : 50%;
+            float: right;
+            width: 50%;
+            height: 300px;
+
+        }
+        </style>
+    <style>
+        .team{
+            background-image: url('/static/logos/logos132x.png');
+            background-repeat: no-repeat;
+            border : 1px solid white;
+            width: 132px;
+            height: 132px;
+            border: none !important;
+        }
+        .Mumbai{
+            background-position: -274px -274px;
+        }
+        .Bangalore{
+            background-position: -411px -137px;
+        }
+        .Rajasthan{
+            background-position: 0px -411px;
+        }
+        .Rising{
+            background-position: -411px -274px;
+        }
+        .Delhi{
+            background-position: -411px 0px;
+        }
+        .Kolkata{
+            background-position: -274px -137px;
+        }
+        .Punjab{
+            background-position: -137px -274px;
+        }
+        .Hyderabad{
+            background-position: -274px -411px;
+        }
+        .Gujarat{
+            background-position: -274px 0px;
+        }
+
+        .Chennai{
+            background-position: -137px 0px;
+        }
+        .Warriors{
+            background-position: 0px 0px;
+        }
+        .tmlogos{
+            position: absolute;
+            width : 70%;
+            position: absolute;
+            top:200px;
+            left:15%;
+        }
+        .team1{
+        }
+        .team2{
+            position: absolute;
+            top:0px;
+            left :calc(100% - 132px);
+        }
+        .ns1{
+            position: absolute;
+            top :10px;
+            left :calc(50% - 250px);
+            right: calc(50% + 15px);
+            opacity: 0.5;
+        }
+        .ns2{
+            position: absolute;
+            top :10px;
+            left :calc(50% + 15px);
+            opacity: 0.5;
+            
+            
+        }
+        .t1{
+            color: white;
+            font-size : 16px;
+            font-weight: bold;
+            direction: rtl;
+            
+        }
+        .t2{
+            color: white;
+            font-size : 16px;
+            font-weight: bold;
+            
+        }
+        .s1{
+            color: white;
+            font-size : 48px;
+            font-weight: bold;
+            float: right;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .s2{
+            color: white;
+            font-size : 48px;
+            font-weight: bold;
+            font-family: 'Source Sans Pro', sans-serif;
+            
+        }
+        .o1{
+            color: white;
+            font-size : 14px;
+            font-weight: bold;
+            float: right;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .o2{
+            color: white;
+            font-size : 14px;
+            font-weight: bold;
+            font-family: 'Source Sans Pro', sans-serif;
+            
+        }
+        .win{
+            padding-top: 130px;
+        }
+        h2{
+           text-align : center;
+            font-size : 30px;
+            color : white;
+            font-weight: bold;
+        }
+    </style>
+    <style type="text/css">
+        .rightheader{
+                position: absolute;
+                top : 400px;
+                left : 60%;
+                padding: 10px;
+
+                
+        }
+        .statscard{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 100%;
+            margin: auto;
+            font-family: arial;
+            margin : 10px;
+            float: right;
+            border-radius: 5px;
+            padding-bottom: 25px;
+        }
+        .headerstats{
+            background-color: #04085b;
+            padding: 5px;
+            padding-left: 10px;
+            color: white;
+            font-weight: bold;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+        }
+        .items{
+            font-size: 12px;
+            padding : 15px;
+            padding-bottom: 0px;
+            
+        }
+        .sidehead{
+            color: black;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline;
+        }
+    </style>
+    <style type="text/css">
+        .leftheader{
+            position: absolute;
+            top : 400px;
+            margin-left: 20px;
+            width: 55%;
+            float: left;
+            padding: 10px;
+        }
+        .over{
+            font-size: 16px;
+        }
+        
+        .commentary{
+            background-color: #e8e8ef;
+        }
+        .items1{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 97%;
+            margin: auto;
+            font-family: arial;
+            margin : 10px;
+            float: right;
+            border-radius: 5px;
+            padding-bottom: 25px;
+            background-color: white;
+        }
+
+    </style>
+    <style type="text/css">
+        .navbar{
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            background-color: #100049;
+            padding: 10px;
+        }
+        .b1{
+            position: absolute;
+            top : 7px;
+            left : calc(100% - 100px);
+        }
+        
+    </style>
+    
+    
+</head>
+<body>
+    <header class="navbar">
+        <div><form action="http://127.0.0.1:8000/logout/">
+        <p>User : {{request.user.username}}</p>
+         <input class="select button b1" type="submit" value="Logout">
+        </form></div>
+        
+    </header>
+    
+    <header>
+
+    <div class="scorecard">
+       
+
+        <img class = "bgi1" src="/static/logos/colouredbg.png">
+        <img class="bgi2" src="/static/logos/colouredbg1.png">
+         <div class = "win">
+        {% if match.winner == match.toss_winner %}
+            {% if match.toss_decision == "field" %}
+                <h2>{{match.winner}} won by {{match.win_by_wickets}} wickets</h2>
+            {% endif %}
+            {% if match.toss_decision == "bat" %}
+                <h2>{{match.winner}} won by {{match.win_by_runs}} runs</h2>
+            {% endif %}
+        {% endif %}
+        {% if match.winner != match.toss_winner %}
+            {% if match.toss_decision != "field" %}
+                <h2>{{match.winner}} won by {{match.win_by_wickets}} wickets</h2>
+            {% endif %}
+            {% if match.toss_decision != "bat" %}
+                <h2>{{match.winner}} won by {{match.win_by_runs}} runs</h2>
+            {% endif %}
+        {% endif %}
+        </div>
+        <div class="tmlogos">
+            <div class="team {{match.team1}} team1"></div>
+            <div class="ns1">
+                {% if match.team1 == match.winner %}
+                <style type="text/css">
+                    .ns1{
+                        opacity: 1;
+                    }
+                    </style>
+                {%endif%}
+                
+                <p class="t1">{{match.team1}}</p>
+                <div><p class="s1"> {{match.inn1}}/{{match.w1}}</p></div><br><br><br>
+                <p class="o1">Overs : {{match.inn1_overs}}/20</p>
+            </div>
+            <div class="ns2">
+                {% if match.team2 == match.winner %}
+                <style type="text/css">
+                    .ns2{
+                        opacity: 1;
+                    }
+                </style>
+                {%endif%}
+                <p class="t2">{{match.team2}}</p>
+                <p class="s2"> {{match.inn2}}/{{match.w2}}</p>
+                <p class="o2">Overs : {{match.inn2_overs}}/20</p>
+            </div>
+            
+            <div class="team {{match.team2}} team2"></div>
+        </div>
+    </div>
+    </header>
+
+    <div class="rightheader">
+        <div class="statscard">
+            <div class="headerstats">Match Details</div>
+            <div class="items"> <p class="sidehead">Toss : </p> {{match.toss_winner}} won the toss and choose to {{match.toss_decision}} first</div>
+            <div class="items"> <p class="sidehead">Man of the Match : </p>{{match.player_of_the_match}}</div>
+            <div class="items"> <p class="sidehead">Venue : </p>{{match.venue}}</div>
+            <div class="items"> <p class="sidehead">Umpires : </p>{{match.umpire1}},{{match.umpire2}},{{match.umpire3}}</div>
+        </div>
+
+        <div class="statscard">
+            <div class="headerstats">Top Run Scorers</div>
+            
+            {% for i in top_scorers %}
+                <div class="items"> <p class="sidehead">{{i.batsman}} : </p>{{i.score}}</div>
+            {%endfor%}
+        </div>
+
+        <div class="statscard">
+            <div class="headerstats">Top Wicket Takers</div>
+            
+            {% for i in top_bowlers %}
+                <div class="items"> <p class="sidehead">{{i.bowler}} : </p>{{i.ct}}</div>
+            {%endfor%}
+        </div>
+
+        <div class="statscard">
+            <div class="headerstats">Extras Inning1</div>
+            <div class="items"> <p class="sidehead">Wide : </p>{{extras.wd}}</div>
+            <div class="items"> <p class="sidehead">Byes : </p>{{extras.bye}}</div>
+            <div class="items"> <p class="sidehead">Legbyes : </p>{{extras.lb}}</div>
+            <div class="items"> <p class="sidehead">Noball : </p>{{extras.nb}}</div>
+            <div class="items"> <p class="sidehead">Penality : </p>{{extras.pn}}</div>
+            
+        </div>
+
+        <div class="statscard">
+            <div class="headerstats">Extras Inning2</div>
+            <div class="items"> <p class="sidehead">Wide : </p>{{extras2.wd}}</div>
+            <div class="items"> <p class="sidehead">Byes : </p>{{extras2.bye}}</div>
+            <div class="items"> <p class="sidehead">Legbyes : </p>{{extras2.lb}}</div>
+            <div class="items"> <p class="sidehead">Noball : </p>{{extras2.nb}}</div>
+            <div class="items"> <p class="sidehead">Penality : </p>{{extras2.pn}}</div>
+            
+        </div>
+    </div>
+        
+    <div class="leftheader">
+            <div class="statscard commentary">
+                <div class="headerstats">Commentary</div>
+                {% for i in summary1 %}
+                    {% if i.player_dismissed == "" %}
+                        <div class="items items1"> <p class="sidehead over">{{i.over}}.{{i.ball}} </p>{{i.bowler}} to {{i.batsman}}, {{i.total_runs}} runs</div>
+                        
+                    {%endif%}
+                    {% if i.player_dismissed != "" %}
+                        <div class="items items1"> <p class="sidehead over">{{i.over}}.{{i.ball}} </p>{{i.bowler}} to {{i.batsman}}, Wicket!!
+                        {{i.player_dismissed}} Out</div>
+                        
+                    {%endif%}
+
+                {%endfor%}
+            
+                {% for i in summary %}
+                    {% if i.player_dismissed == "" %}
+                        <div class="items items1"> <p class="sidehead over">{{i.over}}.{{i.ball}} </p>{{i.bowler}} to {{i.batsman}}, {{i.total_runs}} runs</div>
+                        
+                    {%endif%}
+                    {% if i.player_dismissed != "" %}
+                        <div class="items items1"> <p class="sidehead over">{{i.over}}.{{i.ball}} </p>{{i.bowler}} to {{i.batsman}}, Wicket!!
+                        {{i.player_dismissed}} Out</div>
+                        
+                    {%endif%}
+                {%endfor%}
+            </div>
+    </div>
+
+</body>
+
+</html>
+

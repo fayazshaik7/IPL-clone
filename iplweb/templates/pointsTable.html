@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Points Table</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bulma.css' %}">
+    <style type="text/css">
+        .points-card{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin: auto;
+            font-family: arial;
+            padding : 10px;
+        }
+        .team{
+            background-image: url('/static/logos/tLogo40x32x-sprite.png');
+            background-repeat: no-repeat;
+            border : 1px solid white;
+            width: 40px;
+            height: 32px;
+            margin-top: 5px;
+            float: left;
+
+        }
+        .Mumbai{
+            background-position: -90px -74px;
+        }
+        .Bangalore{
+            background-position: -135px -37px;
+        }
+        .Rajasthan{
+            background-position: 0px -111px;
+        }
+        .Rising{
+            background-position: -135px -74px;
+        }
+        .Delhi{
+            background-position: -135px 0px;
+        }
+        .Kolkata{
+            background-position: -90px -37px;
+        }
+        .Punjab{
+            background-position: -45px -74px;
+        }
+        .Hyderabad{
+            background-position: -90px -111px;
+        }
+        .Gujarat{
+            background-position: -90px 0px;
+        }
+
+        .Chennai{
+            background-position: -45px 0px;
+        }
+        .Warriors{
+            background-position: 0px 0px;
+        }
+        .Chargers{
+            background-position: -45px -37px;
+        }
+        .entry{
+            display: inline;
+        }
+        .winner{
+            margin-top: 10px;
+            margin-left: 30px;
+            float: left;
+            font-weight: bold;
+            color: black;
+        }
+        .ln{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 350px;
+            height: 52px;
+            font-family: arial;
+            padding : 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <p>Select Season</p>
+        <button class="button"><a href="http://127.0.0.1:8000/pointsTable/2008/">2008</a></button>
+        <button class="button"><a href="http://127.0.0.1:8000/pointsTable/2009/">2009</a></button>
+        <button class="button"><a href="http://127.0.0.1:8000/pointsTable/2010/">2010</a></button>
+        <button class="button"><a href="http://127.0.0.1:8000/pointsTable/2011/">2011</a></button>
+        <button class="button"><a href="http://127.0.0.1:8000/pointsTable/2012/">2012</a></button>
+        <button class="button"><a href="http://127.0.0.1:8000/pointsTable/2013/">2013</a></button>
+        <button class="button"><a href="http://127.0.0.1:8000/pointsTable/2014/">2014</a></button>
+        <button class="button"><a href="http://127.0.0.1:8000/pointsTable/2015/">2015</a></button>
+        <button class="button"><a href="http://127.0.0.1:8000/pointsTable/2016/">2016</a></button>
+        <button class="button"><a href="http://127.0.0.1:8000/pointsTable/2017/">2017</a></button>
+        <button class="button"><a href="http://127.0.0.1:8000/pointsTable/2018/">2018</a></button>
+        <button class="button"><a href="http://127.0.0.1:8000/pointsTable/2019/">2019</a></button>
+    </div>
+
+    <table class="table is-bordered is-striped is-narrow is-hoverable points-card">
+        <tr>
+            <th style="width: 350px; text-align: center;">Team</th>
+            <th style="text-align: center;">Points</th>
+        </tr>
+        {% for i in points %}
+        <tr>
+            <td class="ln">
+                <div class="team {{i.winner}}"></div>
+                <div class="winner">{{i.winner}}</div>
+            </td>
+            <td class="winpts" style="padding-top: 13px; text-align: center;">{{i.winner__count}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

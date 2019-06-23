@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Matches</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script>
+
+        function display(){
+            var e = document.getElementById("opt").value;
+            window.alert(e+"hello");
+        }
+
+    </script>
+    <style>
+
+        .tab{
+            width = 50%;
+        }
+
+        .card{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+            margin: auto;
+            font-family: arial;
+            margin-bottom : 10px;
+            padding : 10px;
+        }
+        .team{
+            background-image: url('/static/logos/tLogo58x-sprite.png');
+            background-repeat: no-repeat;
+            border : 1px solid white;
+            width: 60px;
+            height: 62px;
+        }
+        .Mumbai{
+            background-position : -126px -126px;
+        }
+        .Bangalore{
+            background-position: -189px -63px;
+        }
+        .Rajasthan{
+            background-position: 0px -189px;
+        }
+        .Rising{
+
+        }
+        .Delhi{
+            background-position: -189px 0px;
+        }
+        .Kolkata{
+            background-position: -252px -63px;
+        }
+        .Punjab{
+            background-position: -63px -126px;
+        }
+        .Hyderabad{
+            background-position: -126px -189px;
+        }
+
+        .Chennai{
+            background-position: -63px 0px;
+        }
+        .vs{
+            text-align : 0px;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        .vl{
+            width:1px;
+            background-color:#b5b8bc;
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:100px;
+            margin-top : 2%;
+            margin-bottom : 2%;
+            margin-bottom : 2%;
+       }
+       .vl2{
+            width:1px;
+            background-color:#b5b8bc;
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:calc(50% + 100px);
+            margin-top : 2%;
+            margin-bottom : 2%;
+            margin-bottom : 2%;
+       }
+       .tmlogos{
+        max-width : 100px;
+       }
+       .res{
+            position:absolute;
+            top:30px;
+            bottom:10px;
+            left:110px;
+       }
+       .t1{
+            text-transform : uppercase;
+            font-weight : bold;
+            font-style: italic;
+       }
+       .t2{
+            margin-top : 30px;
+            text-transform : uppercase;
+            font-weight : bold;
+            font-style: italic;
+       }
+       .s1{
+            position:absolute;
+            top:24px;
+            bottom:10px;
+            left:50%;
+            font-weight : bold;
+            font-size : 22px;
+       }
+       .s2{
+            margin-top : 30px;
+            position:absolute;
+            top:49px;
+            bottom:10px;
+            left:50%;
+            font-weight : bold;
+            font-size : 22px;
+       }
+       .report{
+            position:absolute;
+            top:24px;
+            bottom:10px;
+            left:calc(50% + 130px);
+       }
+       .wn{
+            font-weight : bold;
+            color : blue;
+       }
+       .mom{
+            position:absolute;
+            top:50px;
+            bottom:10px;
+            left:calc(50% + 130px);
+       }
+       .mom1{
+            font-size : 14px;
+       }
+       .btn{
+            position:absolute;
+            top:80px;
+            bottom:10px;
+            left:calc(50% + 130px);
+            background-color : #EF4123;
+            color : white;
+            font-weight : 700;
+            font-size : 14px;
+       }
+
+
+    </style>
+    <style type="text/css">
+        .navbar1{
+            width: 100%;
+            height: 50px;
+            background-color: #100049;
+            padding: 10px;
+        }
+        .b1{
+           position: absolute;
+            top : 7px;
+            left : calc(100% - 100px);
+        }
+        
+    </style>
+    
+    <style type="text/css">
+    .dropdown{
+        
+    }
+    .dropdown-content{
+        display: none;
+        
+       
+    }
+    .dropdown:hover .dropdown-content{
+        background-color: #060659;
+        display: block;
+    }        
+    .cards{
+    }
+    .pt{
+        position: absolute;
+        top : 7px;
+        left : 100px;
+    }
+    .tp{
+        position: absolute;
+        top : 7px;
+        left : 250px;
+    }
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar1">
+        <div><form action="http://127.0.0.1:8000/logout/">
+        <p>User : {{request.user.username}}</p><br>
+         <input class="select button b1" type="submit" value="Logout">
+        </form></div>
+
+    <a href="http://127.0.0.1:8000/pointsTable/{{season}}/" style=" padding-top: 60px;"><button class="button pt" style="background-color : #fffb89; align-text : center; float: left;">Points table</button></a>
+    <a href="http://127.0.0.1:8000/TeamStats/Mumbai Indians/2019" style="padding-top: 60px;"><button class="button tp" style="background-color : #fffb89; float: right; ">Team Page</button></a>
+
+    <div class="navbar">
+  <div class="dropdown">
+    <button class="dropbtn">Select Season 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:8000/matches/2019">2019</a>
+      <a href="http://127.0.0.1:8000/matches/2018">2018</a>
+      <a href="http://127.0.0.1:8000/matches/2017">2017</a>
+      <a href="http://127.0.0.1:8000/matches/2016">2016</a>
+      <a href="http://127.0.0.1:8000/matches/2015">2015</a>
+      <a href="http://127.0.0.1:8000/matches/2014">2014</a>
+      <a href="http://127.0.0.1:8000/matches/2013">2013</a>
+      <a href="http://127.0.0.1:8000/matches/2012">2012</a>
+      <a href="http://127.0.0.1:8000/matches/2011">2011</a>
+      <a href="http://127.0.0.1:8000/matches/2010">2010</a>
+      <a href="http://127.0.0.1:8000/matches/2009">2009</a>
+      <a href="http://127.0.0.1:8000/matches/2008">2008</a>
+    </div>
+  </div> 
+</div>
+        
+    </header>
+   
+    <div style="padding-top: 60px;" class="cards">
+        {% for i in match %}
+            <div class="card">
+                <div class="tmlogos">
+                    <div class="team {{i.team1}}"></div>
+                <div class="team {{i.team2}}"></div>
+                </div>
+
+                <div class="vl"></div>
+
+                <div class="res">
+                    <p class="t1">{{i.team1}}</p>
+                    <p class="t2">{{i.team2}}</p>
+                </div>
+                <div>
+                    <p class="s1"> {{i.inn1}}/{{i.w1}}</p>
+                    <p class="s2"> {{i.inn2}}/{{i.w2}}</p>
+                </div>
+                <div class="vl2"></div>
+                <div class="report">
+                    {% if i.winner == i.toss_winner %}
+                         {% if i.toss_decision == "field" %}
+                            <h2 class="wn">{{i.winner}} won by {{i.win_by_wickets}} wickets</h2>
+                         {% endif %}
+                         {% if i.toss_decision == "bat" %}
+                            <h2 class="wn">{{i.winner}} won by {{i.win_by_runs}} runs</h2>
+                        {% endif %}
+                    {% endif %}
+                    {% if i.winner != i.toss_winner %}
+                        {% if i.toss_decision != "field" %}
+                            <h2 class="wn">{{i.winner}} won by {{i.win_by_wickets}} wickets</h2>
+                        {% endif %}
+                        {% if i.toss_decision != "bat" %}
+                            <h2 class="wn">{{i.winner}} won by {{i.win_by_runs}} runs</h2>
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <div class="mom">
+                    <h2 class="mom1">Man of the match - {{i.player_of_the_match}}</h2>
+                </div>
+                <a href="http://127.0.0.1:8000/match_report/{{i.match_id}}/"><button class="button btn">MATCH CENTRE</button></a>
+            </div>
+
+
+        {% endfor %}
+
+    </div>
+    <div class="pagination" style="margin-left: calc(50% - 50px);">
+    <span class="step-links">
+        {% if match.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ match.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ match.number }} of {{ match.paginator.num_pages }}.
+        </span>
+
+        {% if match.has_next %}
+            <a href="?page={{ match.next_page_number }}">next</a>
+            <a href="?page={{ match.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+</body>
+</html>

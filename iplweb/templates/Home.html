@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPL | HOME</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bulma.css' %}">
+    <style>
+        img{
+            height : 50px;
+            width : 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% for i in recentmatches %}
+        <div><img src="/static/logos/{{i.team1}}.png">Vs<img src="/static/logos/{{i.team2}}.png"></div>
+    {%endfor%}
+
+
+</body>
+</html>
